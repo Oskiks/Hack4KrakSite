@@ -122,3 +122,11 @@ const userMenuItems = computed(() => [
     </template>
   </UHeader>
 </template>
+
+<style>
+[data-slot='title'] {
+  cursor:
+    url('/img/obwarzanek.png') 16 16,
+    pointer;
+}
+</style>

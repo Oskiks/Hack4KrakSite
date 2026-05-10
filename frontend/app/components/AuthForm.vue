@@ -14,9 +14,13 @@ const schema = z.object({
         first_name: z.string({ error: 'Imię jest wymagane' })
           .min(1, 'Podaj imię lub formę, której mamy używać')
           .max(64, 'To pole może mieć maksymalnie 64 znaki')
-          .meta({ title: 'Jak mamy się do Ciebie zwracać?' }),
+          .meta({ title: 'Jak mamy się do Ciebie zwracać?', input: { props: { placeholder: 'np. Krakus, Lajkonik' } } }),
       }),
-  email: z.email({ error: 'Niepoprawny adres e-mail' }).meta({ title: 'Adres e-mail' }),
+  email: z.email({ error: 'Niepoprawny adres e-mail' }).meta({ title: 'Adres e-mail', input: {
+    props: {
+      placeholder: 'lajkonik@hack4krak.pl',
+    },
+  } }),
   password: zPassword(),
 })
 

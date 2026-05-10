@@ -15,5 +15,5 @@ export function zTeamName() {
 export function zUsername() {
   return z.string({ error: 'Nazwa użytkownika jest wymagana' })
     .min(3, 'Nazwa użytkownika musi mieć co najmniej 3 znaki')
-    .meta({ title: 'Nazwa użytkownika' })
+    .meta({ title: 'Nazwa użytkownika', input: { props: { placeholder: 'np. krakus_1337, smok_wawelski' } } })
 }
