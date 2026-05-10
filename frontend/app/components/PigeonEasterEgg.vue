@@ -21,7 +21,7 @@ const PIGEON_COUNT = 20
 const DANGER_RADIUS = 200
 
 const route = useRoute()
-const { isIdle } = useIdleTracker(IDLE_TIMEOUT)
+const { idle } = useIdleTracker(IDLE_TIMEOUT)
 
 const phase = ref<Phase>('hidden')
 const pigeons = ref<PigeonData[]>([])
@@ -225,8 +225,8 @@ function onGlobalInteraction() {
     scare()
 }
 
-watch(isIdle, (idle) => {
-  if (idle && route.path.startsWith('/panel'))
+watch(idle, (value) => {
+  if (value && route.path.startsWith('/panel'))
     spawn()
 })
 
