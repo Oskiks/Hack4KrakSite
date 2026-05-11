@@ -81,27 +81,9 @@ onMounted(() => {
     ctx.show = false
   }, { passive: true })
 
-  // --- Tab title changer ---
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      originalTitle = document.title
-      document.title = '❗ WRACAJŻE TUTAJ ❗ 🥨'
-    } else {
-      document.title = originalTitle
-    }
-  })
 
-  // --- F12 + Dzwon Zygmunta + Escape ---
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'F12') {
-      // eslint-disable-next-line no-console
-      console.log('%c🫓 Kupiłeś już obwarzanka?', 'font-size: 18px; color: #D08700; font-weight: bold;')
-    }
 
-    if (e.key === 'Escape')
-      ctx.show = false
-  })
-})
+
 </script>
 
 <template>
